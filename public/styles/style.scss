@@ -10,3 +10,11 @@ body {
 a {
   color: $link-color;
 }
+
+button {
+  display: flex;
+  flex-direction: row;
+}
+image {
+  size: 100px;
+}

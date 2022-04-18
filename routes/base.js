@@ -3,6 +3,7 @@ const router = new express.Router();
 const User = require('./../models/user');
 const bcryptjs = require('bcryptjs');
 const routeGuard = require('./../middleware/routeGuard');
+const { route } = require('express/lib/application');
 
 router.get('/', (req, res, next) => {
   res.render('index');
@@ -67,5 +68,10 @@ router.post('/signup', (req, res, next) => {
 // GET - /private To display private page to authenticated users only
 router.get('/private', routeGuard, (req, res, next) => {
   res.render('private');
+});
+
+// GET /main To display the main page
+router.get('/main', routeGuard, (req, res, next) => {
+  res.render('main');
 });
 module.exports = router;
